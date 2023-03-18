@@ -1,6 +1,6 @@
 require('mason').setup()
 require('mason-lspconfig').setup({
-  ensure_installed = { "lua_ls", "clangd", "ltex", "marksman", "kotlin_language_server" }
+  ensure_installed = { "lua_ls", "clangd", "ltex", "marksman", "pylsp", "cmake", "html", "jsonls" }
 })
 
 local on_attach = function(_, _)
@@ -25,6 +25,15 @@ require("lspconfig").ltex.setup {
 require("lspconfig").marksman.setup {
   on_attach = on_attach
 }
-require("lspconfig").kotlin_language_server.setup {
+require("lspconfig").pylsp.setup {
+  on_attach = on_attach
+}
+require("lspconfig").cmake.setup {
+  on_attach = on_attach
+}
+require("lspconfig").html.setup {
+  on_attach = on_attach
+}
+require("lspconfig").jsonls.setup {
   on_attach = on_attach
 }
