@@ -19,6 +19,14 @@ return require('packer').startup(function(use)
   use 'nvim-lualine/lualine.nvim'
   use 'nvim-treesitter/nvim-treesitter'
   use {
+    'hrsh7th/nvim-cmp',
+    'hrsh7th/cmp-nvim-lsp',
+    'L3MON4D3/LuaSnip',
+    'saadparwaiz1/cmp_luasnip',
+    'rafamadriz/friendly-snippets',
+    'github/copilot.vim',
+  }
+  use {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
     'neovim/nvim-lspconfig',
@@ -35,3 +43,4 @@ return require('packer').startup(function(use)
     require('packer').sync()
   end
 end)
+
