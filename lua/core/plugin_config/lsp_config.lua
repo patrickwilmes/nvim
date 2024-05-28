@@ -1,6 +1,8 @@
-require('mason').setup()
+require('mason').setup( {
+     log_level = vim.log.levels.DEBUG
+})
 require('mason-lspconfig').setup({
-  ensure_installed = { "lua_ls", "clangd", "ltex", "marksman", "pylsp", "cmake", "html", "jsonls", "kotlin_language_server" }
+  ensure_installed = { "lua_ls", "clangd", "ltex", "marksman", "pylsp", "cmake", "html", "jsonls", "gopls" }
 })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -47,7 +49,7 @@ require("lspconfig").jsonls.setup {
   capabilities = capabilities,
   on_attach = on_attach
 }
-require("lspconfig").kotlin_language_server.setup {
+require("lspconfig").gopls.setup {
   capabilities = capabilities,
   on_attach = on_attach
 }
